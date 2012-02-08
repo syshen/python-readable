@@ -181,7 +181,7 @@ class Readable(object):
     def make_cleaner(self):
         "Construct an object to clean out unwanted stuff from a node."
         opts = dict(scripts=True, javascript=True, comments=True,
-            style=False, links=True, meta=False, page_structure=False, 
+            style=True, links=True, meta=False, page_structure=False, 
             processing_instructions=True, embedded=False, frames=False, 
             forms=False, annoying_tags=False, safe_attrs_only=False)
         return lxml.html.clean.Cleaner(**opts)
