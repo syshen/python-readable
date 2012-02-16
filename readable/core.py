@@ -467,6 +467,9 @@ class Readable(object):
             self.initialize_node(top)
             self.initialize_node(body)
 
+        # pass the score up
+        content.readable = Bag(score = 0)
+
         # line 859
         sib_thresh = max(10, top.readable.score * 0.2)
 
@@ -522,6 +525,9 @@ class Readable(object):
                     n = el
                 n.set('class', '')
                 content.append(n)
+
+                # sum up the score
+                content.readable.score += n.readable.score
 
         self.prep_article(content)
         return content
