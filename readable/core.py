@@ -527,7 +527,8 @@ class Readable(object):
                 content.append(n)
 
                 # sum up the score
-                content.readable.score += n.readable.score
+                if self.is_readable(n):
+                    content.readable.score += n.readable.score
 
         self.prep_article(content)
         return content
