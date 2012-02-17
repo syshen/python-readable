@@ -294,6 +294,7 @@ class Readable(object):
         self.clean_conditionally(content, "form")
         self.clean(content, 'object')
         self.clean(content, 'h1')
+        self.clean(content, 'noscript')  # cleanup noscript tags
         if len(content.xpath('.//h2')) == 1:
             self.clean(content, 'h2')
         self.clean(content, 'iframe')
