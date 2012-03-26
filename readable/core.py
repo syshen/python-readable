@@ -587,6 +587,9 @@ class Readable(object):
             return 0
         linklen = 0
         for link in links:
+            # syshen: 20120326 only with 'src' attribute counts a link
+            if 'src' not in link.attrib:
+                continue
             linklen += len(self.get_inner_text(link))
         return linklen / float(textlen)
 
