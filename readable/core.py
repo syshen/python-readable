@@ -294,6 +294,9 @@ class Readable(object):
         self.clean_conditionally(content, "form")
         self.clean(content, 'object')
         self.clean(content, 'h1')
+        self.clean(content, 'aside')  # cleanup HTML5 aside tag
+        self.clean(content, 'footer') # cleanup HTML5 footer tag
+        self.clean(content, 'nav') # cleanup HTML5 nav tag
         self.clean(content, 'noscript')  # cleanup noscript tags
         if len(content.xpath('.//h2')) == 1:
             self.clean(content, 'h2')
