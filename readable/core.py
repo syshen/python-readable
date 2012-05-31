@@ -183,7 +183,7 @@ class Readable(object):
         opts = dict(scripts=True, javascript=True, comments=True,
             style=True, links=True, meta=False, page_structure=False, 
             processing_instructions=True, embedded=False, frames=False, 
-            forms=False, annoying_tags=False, safe_attrs_only=False)
+            forms=False, kill_tags=['aside', 'nav', 'footer', 'menu'], annoying_tags=False, safe_attrs_only=False)
         return lxml.html.clean.Cleaner(**opts)
 
     def node_copy(self, node):
